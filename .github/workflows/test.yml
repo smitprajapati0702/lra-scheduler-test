@@ -3,7 +3,7 @@ name: Scheduler Test
 on:
   schedule:
     # Every 5 minutes
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
   workflow_dispatch:
 
