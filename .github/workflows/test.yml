@@ -1,0 +1,27 @@
+name: Scheduler Test
+
+on:
+  schedule:
+    # Every 5 minutes
+    - cron: '*/5 * * * *'
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print execution details
+        run: |
+          echo "================================="
+          echo "Workflow Triggered!"
+          echo "UTC Time:"
+          date -u
+          echo
+          echo "Runner Local Time:"
+          date
+          echo
+          echo "Branch: $GITHUB_REF"
+          echo "Commit: $GITHUB_SHA"
+          echo "================================="
